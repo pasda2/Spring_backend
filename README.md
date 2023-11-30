@@ -1,7 +1,7 @@
 # Java Live Action Monopoly
 # Overview
 
-Welcome to the Java Live Action Monopoly project! This project aims to bring the classic Monopoly board game to life with a graphical user interface (GUI) implemented in Java. It's designed for an engaging live-action gaming experience.
+Welcome to the Java Live Action Monopoly project! This project aims to bring the classic Monopoly board game to life implemented in Java. It's designed for an engaging live-action gaming experience.
 
 # Installation
 
