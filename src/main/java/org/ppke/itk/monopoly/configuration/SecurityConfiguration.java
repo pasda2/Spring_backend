@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
-/*
+
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -22,23 +22,22 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import static org.springframework.boot.autoconfigure.security.servlet.PathRequest.toH2Console;
 import static org.springframework.security.web.util.matcher.AntPathRequestMatcher.antMatcher;
-*/
+
 
 @Slf4j
 @RequiredArgsConstructor
 @Configuration
-//@EnableWebSecurity
-//@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true, jsr250Enabled = true)
+@EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true, jsr250Enabled = true)
 public class SecurityConfiguration {
     private final CostumDetailsService customDetailsService;
 
-    /*@Bean
+    @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
 
         httpSecurity.csrf(csrf ->csrf.disable());
 
         httpSecurity.authorizeHttpRequests(auth -> auth
-                        .requestMatchers(antMatcher("/h2-console/**")).permitAll()
                         .requestMatchers(antMatcher(HttpMethod.DELETE)).hasRole("ADMIN")
                         .requestMatchers(antMatcher(HttpMethod.PUT)).hasAnyRole("ADMIN","GAME_MASTER")
                         .requestMatchers(antMatcher(HttpMethod.GET)).hasAnyRole("PLAYER","ADMIN","GAME_MASTER")
@@ -55,7 +54,7 @@ public class SecurityConfiguration {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
-    }*/
+    }
     /*
     @Bean
     public AuthenticationManager authManager(HttpSecurity http) throws Exception {
@@ -77,7 +76,7 @@ public class SecurityConfiguration {
         return authenticationManagerBuilder.build();
     }
     */
-/*
+
     @Bean
     public AuthenticationManager authManager(HttpSecurity http) throws Exception {
         AuthenticationManagerBuilder authenticationManagerBuilder =
@@ -87,5 +86,5 @@ public class SecurityConfiguration {
                 .userDetailsService(customDetailsService)
                 .passwordEncoder(passwordEncoder());
         return authenticationManagerBuilder.build();
-    }*/
+    }
 }

@@ -1,3 +1,7 @@
+insert into "USERS"(name,role,password) values ('admin','ROLE_ADMIN','$2a$10$VRJh6RWQ7EcQw2G9GMSKY.yhaw7bReoq5fJbBiomk1Xaosa2OgJni');
+insert into "USERS"(name,role,password) values ('gamemaster','ROLE_GAME_MASTER','$2a$12$LdCxSkHcyF0CLzOi4MLeQ.v3DQkUlwqdCMvhYvkEoYh3p/9yfhldC');
+insert into "USERS"(name,role,password) values ('player','ROLE_PLAYER','$2a$12$U9mgKxOSEHzQFFwSfy95xenTa5advO63vhDBtQ2bXJrHqPpNlGb9W');
+
 insert into "BOARD"(id,name) values (1,'TABLE 1');
 
 insert into "TEAM"(id,name,balance,board_id) values( 1,'TEAM 1',1200,1);
@@ -21,9 +25,6 @@ insert into "GAME_MASTER"(id,name) values (2,'game_master2');
 insert into "GAME_MASTER"(id,name) values (3,'game_master3');
 insert into "GAME_MASTER"(id,name) values (4,'game_master4');
 
-insert into "USER"(name,role,password) values ('admin','ROLE_ADMIN','$2a$10$VRJh6RWQ7EcQw2G9GMSKY.yhaw7bReoq5fJbBiomk1Xaosa2OgJni');
-insert into "USER"(name,role,password) values ('gamemaster','ROLE_GAME_MASTER','$2a$12$LdCxSkHcyF0CLzOi4MLeQ.v3DQkUlwqdCMvhYvkEoYh3p/9yfhldC');
-insert into "USER"(name,role,password) values ('player','ROLE_PLAYER','$2a$12$U9mgKxOSEHzQFFwSfy95xenTa5advO63vhDBtQ2bXJrHqPpNlGb9W');
 
 
 insert into "FEE"(no_house,one_house,two_house,three_house,four_house,hotel) values ( 50,100,200,300,400,500);

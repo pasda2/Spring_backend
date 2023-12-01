@@ -1,3 +1,9 @@
+CREATE TABLE "USERS" (
+id INTEGER NOT NULL PRIMARY KEY auto_increment,
+name varchar(100),
+role varchar(100),
+password varchar(300)
+);
 
 CREATE TABLE "BOARD" (
 id INTEGER NOT NULL PRIMARY KEY auto_increment,
@@ -45,12 +51,7 @@ CONSTRAINT fk_player_on_team
 	  REFERENCES "TEAM"(id)
 );
 
-CREATE TABLE "USER" (
-id INTEGER NOT NULL PRIMARY KEY auto_increment,
-name varchar(100),
-role varchar(100),
-password varchar(300)
-);
+
 
 CREATE TABLE "FEE"(
 id INTEGER NOT NULL PRIMARY KEY auto_increment,
