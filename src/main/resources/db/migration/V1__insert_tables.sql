@@ -5,6 +5,67 @@ role varchar(100),
 password varchar(300)
 );
 
+
+CREATE TABLE "RECIPE_DETAILS"(
+    id INTEGER NOT NULL PRIMARY KEY auto_increment,
+    description TEXT
+
+);
+
+CREATE TABLE "RECIPE"(
+ id INTEGER NOT NULL PRIMARY KEY  auto_increment,
+ name TEXT,
+ description TEXT,
+ author TEXT,
+ image TEXT,
+ recipe_details_id INTEGER,
+ CONSTRAINT fk_recipe_of_details
+     FOREIGN KEY (recipe_details_id)
+     REFERENCES "RECIPE_DETAILS"(id)
+);
+CREATE TABLE "STEPS"(
+    id INTEGER NOT NULL PRIMARY KEY auto_increment,
+    description TEXT,
+    recipe_details_id INTEGER,
+    CONSTRAINT fk_steps_for_details
+        FOREIGN KEY (recipe_details_id)
+        REFERENCES "RECIPE_DETAILS"(id)
+);
+
+CREATE TABLE "AVAILABLE_INGREDIENTS"
+(
+    id                INTEGER NOT NULL PRIMARY KEY auto_increment,
+    name              TEXT,
+    description       TEXT
+);
+
+CREATE TABLE "INGREDIENTS"(
+    id INTEGER NOT NULL PRIMARY KEY auto_increment,
+    name TEXT,
+    description TEXT,
+    recipe_details_id INTEGER,
+    step_id INTEGER,
+    CONSTRAINT fk_ingredients_for_details
+        FOREIGN KEY (recipe_details_id)
+        REFERENCES "RECIPE_DETAILS"(id),
+    CONSTRAINT fk_ingredients_for_step
+        FOREIGN KEY (step_id)
+        REFERENCES "STEPS"(id)
+);
+
+CREATE TABLE "FAVORITES"(
+    id INTEGER NOT NULL PRIMARY KEY auto_increment,
+    user_id INTEGER,
+    recipe_id INTEGER,
+    CONSTRAINT fk_favorites_for_recipes
+        FOREIGN KEY (recipe_id)
+            REFERENCES "RECIPE"(id),
+    CONSTRAINT fk_favorites_for_users
+        FOREIGN KEY (user_id)
+            REFERENCES "USERS"(id)
+);
+
+
 CREATE TABLE "BOARD" (
 id INTEGER NOT NULL PRIMARY KEY auto_increment,
 name VARCHAR(100),
